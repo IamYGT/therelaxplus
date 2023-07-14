@@ -1,0 +1,22 @@
+RewriteEngine on
+
+RewriteRule ^([a-zA-Z0-9\-_]+).html$ anasayfa.php?sayfa=$1 [L,QSA]
+
+RewriteRule ^menu/(.*)/(.*).html$ anasayfa.php?sayfa=menu-ayar&islem=$1&id=$2 [L,QSA]
+RewriteRule ^blog-duzenle/(.*).html$ anasayfa.php?sayfa=blog-ekle&islem=duzenle&id=$1 [L,QSA]
+RewriteRule ^sayfa-duzenle/(.*).html$ anasayfa.php?sayfa=sayfa-ekle&islem=duzenle&id=$1 [L,QSA]
+RewriteRule ^rehber-duzenle/(.*).html$ anasayfa.php?sayfa=rehber-ekle&islem=duzenle&id=$1 [L,QSA]
+RewriteRule ^slider-duzenle/(.*).html$ anasayfa.php?sayfa=slider-ekle&islem=duzenle&id=$1 [L,QSA]
+RewriteRule ^hizmet-duzenle/(.*).html$ anasayfa.php?sayfa=hizmet-ekle&islem=duzenle&id=$1 [L,QSA]
+RewriteRule ^yonetici-duzenle/(.*).html$ anasayfa.php?sayfa=yonetici-ekle&islem=duzenle&id=$1 [L,QSA]
+RewriteRule ^foto-duzenle/(.*).html$ anasayfa.php?sayfa=foto-ekle&islem=duzenle&id=$1 [L,QSA]
+RewriteRule ^video-duzenle/(.*).html$ anasayfa.php?sayfa=video-ekle&islem=duzenle&id=$1 [L,QSA]
+RewriteRule ^dil-duzenle/(.*).html$ anasayfa.php?sayfa=dil-ekle&islem=duzenle&id=$1 [L,QSA]
+RewriteRule ^soru-duzenle/(.*).html$ anasayfa.php?sayfa=soru-ekle&islem=duzenle&id=$1 [L,QSA]
+RewriteRule ^marka-duzenle/(.*).html$ anasayfa.php?sayfa=marka-ekle&islem=duzenle&id=$1 [L,QSA]
+
+<IfModule mod_security.c>
+  SecFilterEngine Off
+  SecFilterScanPOST Off
+</IfModule>
+

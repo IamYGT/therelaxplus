@@ -1,0 +1,29 @@
+RewriteEngine on
+
+Options All -Indexes
+ErrorDocument 404 /404.html
+
+RewriteRule ^([a-zA-Z0-9\-_]+).html$ index.php?sayfa=$1 [L,QSA]
+RewriteRule ^sayfa/(.*).html$ index.php?sayfa=sayfalar&id=$1 [L,QSA]
+RewriteRule ^hizmet/(.*).html$ index.php?sayfa=hizmet&id=$1 [L,QSA]
+RewriteRule ^habersayfa/(.*).html$ index.php?sayfa=haberler&s=$1 [L,QSA]
+RewriteRule ^foto-galeri-sayfa/(.*).html$ index.php?sayfa=foto-galeri&s=$1 [L,QSA]
+RewriteRule ^video-galeri-sayfa/(.*).html$ index.php?sayfa=video-galeri&s=$1 [L,QSA]
+RewriteRule ^cozum-ortaklarimiz/(.*).html$ index.php?sayfa=cozum-ortaklarimiz&s=$1 [L,QSA]
+RewriteRule ^foto-galeri/(.*).html$ index.php?sayfa=foto-galeri&s=$1 [L,QSA]
+RewriteRule ^foto/(.*).html$ index.php?sayfa=foto&id=$1 [L,QSA]
+RewriteRule ^blog/(.*).html$ index.php?sayfa=blog-detay&id=$1 [L,QSA]
+RewriteRule ^Ara/(.*)/(.*)$ index.php?sayfa=ara&id=$1&adi=$2 [L,QSA]
+RewriteRule ^sayfalar-(.*?)?$ index.php?sayfa=sayfalar&id=$1
+
+<IfModule mod_security.c>
+  SecFilterEngine Off
+  SecFilterScanPOST Off
+</IfModule>
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# “ea-php72” paketini varsayılan “PHP” programlama dili olarak ayarlayın.
+<IfModule mime_module>
+  AddType application/x-httpd-ea-php72 .php .php7 .phtml
+</IfModule>
+# php -- END cPanel-generated handler, do not edit
